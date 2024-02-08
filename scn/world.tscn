@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b58rn10h0o5pe"]
+
+[ext_resource type="Texture2D" uid="uid://cw4gml8nlf7ea" path="res://Tree-Assets.png" id="1_ku1mx"]
+[ext_resource type="PackedScene" uid="uid://i0u4p8nxix8q" path="res://player.tscn" id="2_8uqwq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqs4y"]
+texture = ExtResource("1_ku1mx")
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_58o1o"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hqs4y")
+
+[node name="world" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_58o1o")
+format = 2
+layer_0/tile_data = PackedInt32Array(458754, 131072, 1, 458755, 131072, 1, 458756, 131072, 1, 458757, 131072, 1, 458758, 131072, 1, 458759, 131072, 1, 458760, 131072, 1, 458761, 131072, 1, 458762, 131072, 1, 458763, 131072, 1, 458764, 131072, 1, 458765, 131072, 1, 458766, 131072, 1, 458767, 131072, 1, 458768, 131072, 1, 458769, 131072, 1, 458770, 131072, 1, 458771, 131072, 1, 458772, 131072, 1, 458773, 131072, 1, 524290, 131072, 2, 524291, 131072, 2, 524292, 131072, 2, 524293, 131072, 2, 524294, 131072, 2, 524295, 131072, 2, 524296, 131072, 2, 524297, 131072, 2, 524298, 131072, 2, 524299, 131072, 2, 524300, 131072, 2, 524301, 131072, 2, 524302, 131072, 2, 524303, 131072, 2, 524304, 131072, 2, 524305, 131072, 2, 524306, 131072, 2, 524307, 131072, 2, 524308, 131072, 2)
+
+[node name="player" parent="." instance=ExtResource("2_8uqwq")]
+position = Vector2(88, 9)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
